@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affectationtechnicien{% endblock %}
+
+{% block body %}
+    <h1>Affectationtechnicien</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Affectationtechnicienid</th>
+                <td>{{ affectationtechnicien.affectationtechnicienid }}</td>
+            </tr>
+            <tr>
+                <th>Lieuaffectationid</th>
+                <td>{{ affectationtechnicien.lieuaffectationid }}</td>
+            </tr>
+            <tr>
+                <th>Roleid</th>
+                <td>{{ affectationtechnicien.roleid }}</td>
+            </tr>
+            <tr>
+                <th>Serviceid</th>
+                <td>{{ affectationtechnicien.serviceid }}</td>
+            </tr>
+            <tr>
+                <th>Datedebutaffectation</th>
+                <td>{{ affectationtechnicien.datedebutaffectation ? affectationtechnicien.datedebutaffectation|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datefinaffectation</th>
+                <td>{{ affectationtechnicien.datefinaffectation ? affectationtechnicien.datefinaffectation|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('affectationtechnicien_index') }}">back to list</a>
+
+    <a href="{{ path('affectationtechnicien_edit', {'affectationtechnicienid': affectationtechnicien.affectationtechnicienid}) }}">edit</a>
+
+    {{ include('affectationtechnicien/_delete_form.html.twig') }}
+{% endblock %}

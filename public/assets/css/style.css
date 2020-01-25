@@ -1,0 +1,127 @@
+h2{
+
+  margin-bottom: 12px;
+  margin-top: 5px;
+}
+.btn_Ajt{
+  margin-bottom: 5px;
+}
+label,.btn{
+  text-transform: unset!important;
+}
+label{
+  margin-top: 10px!important;
+}
+/*pour text arabe en droit dans le model */
+.text_Arb{
+	float: right;
+	/*padding-right: 1%;
+	padding-left: 0%;*/
+	text-align: right;
+}
+/*pour input arabe en droit dans le model */
+.input_Arb{
+	direction: rtl;
+}
+/* mettre le button pour ajouter en right*/
+.btnAED{
+  float: right;
+  margin-right: 0px!important;
+  margin-top: 12px!important;
+}
+/*Regler le column Action (button Modifier and supprimer)*/
+tbody>tr> td:last-child{
+  width: 210px!important;
+}
+/*datatable */
+/*Mettre le text middle dans les rows de datatable  */
+#dt >tbody>tr>td{
+  vertical-align: middle!important;
+}
+/*text arabic dans datatable */
+.text_Arb_Datatable{
+	text-align: right;
+}
+.changeBtn{
+  float: right;
+}
+/*pour hide column ID dans datatable*/
+.hideID{
+  display: none;
+}
+/*pour regler la affichage type eleveurs and title and choise*/
+.typeEleveur{
+    display: flex;
+}
+.titleTypeEleveur{
+    align-self: center;
+}
+.choiseTypeEleveur{
+    margin-left: 2%;
+}
+/*div button open modal edit and delete*/
+.divBtnEditDelete{
+    float: right;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* css pour l'identification de groupement*/
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+p {
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+th {
+  background-color: lightgray;
+  width: 10%;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 3px solid black;
+  border-style: solid;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 90%;
+}
+
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-collapse: collapse;
+  border: 3px solid black;
+}
+
+table td input{
+  display: block;
+  top:0;
+  left:0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+table td select{
+  display: block;
+  top:0;
+  left:0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+}

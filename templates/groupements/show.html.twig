@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Groupements{% endblock %}
+
+{% block body %}
+    <h1>Groupements</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Groupementid</th>
+                <td>{{ groupement.groupementid }}</td>
+            </tr>
+            <tr>
+                <th>Groupementmereid</th>
+                <td>{{ groupement.groupementmereid }}</td>
+            </tr>
+            <tr>
+                <th>Codegroupement</th>
+                <td>{{ groupement.codegroupement }}</td>
+            </tr>
+            <tr>
+                <th>Nomgroupementfr</th>
+                <td>{{ groupement.nomgroupementfr }}</td>
+            </tr>
+            <tr>
+                <th>Nomgroupementar</th>
+                <td>{{ groupement.nomgroupementar }}</td>
+            </tr>
+            <tr>
+                <th>Adressepostale</th>
+                <td>{{ groupement.adressepostale }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{{ groupement.datecreation ? groupement.datecreation|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Pvcreation</th>
+                <td>{{ groupement.pvcreation }}</td>
+            </tr>
+            <tr>
+                <th>Droitfonctionement</th>
+                <td>{{ groupement.droitfonctionement }}</td>
+            </tr>
+            <tr>
+                <th>Autrecotisations</th>
+                <td>{{ groupement.autrecotisations }}</td>
+            </tr>
+            <tr>
+                <th>Effectifovinencadre</th>
+                <td>{{ groupement.effectifovinencadre }}</td>
+            </tr>
+            <tr>
+                <th>Effectifcaprinencadre</th>
+                <td>{{ groupement.effectifcaprinencadre }}</td>
+            </tr>
+            <tr>
+                <th>Lieupvcreation</th>
+                <td>{{ groupement.lieupvcreation }}</td>
+            </tr>
+            <tr>
+                <th>Datepvcreation</th>
+                <td>{{ groupement.datepvcreation ? groupement.datepvcreation|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('groupements_index') }}">back to list</a>
+
+    <a href="{{ path('groupements_edit', {'groupementid': groupement.groupementid}) }}">edit</a>
+
+    {{ include('groupements/_delete_form.html.twig') }}
+{% endblock %}

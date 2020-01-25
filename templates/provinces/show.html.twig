@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Provinces{% endblock %}
+
+{% block body %}
+    <h1>Provinces</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Provinceid</th>
+                <td>{{ province.provinceid }}</td>
+            </tr>
+            <tr>
+                <th>Provincefr</th>
+                <td>{{ province.provincefr }}</td>
+            </tr>
+            <tr>
+                <th>Provincear</th>
+                <td>{{ province.provincear }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('provinces_index') }}">back to list</a>
+
+    <a href="{{ path('provinces_edit', {'provinceid': province.provinceid}) }}">edit</a>
+
+    {{ include('provinces/_delete_form.html.twig') }}
+{% endblock %}

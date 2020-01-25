@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--favicon-->
+    <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon"/>
+</head>
+<body>
+<h1>veuillez rester patient, votre compte est activé maintenant, vous serez redirigé vers la page de connexion avec votre nouveau mot de passe</h1>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+<script src="{{ asset('assets/js/jquery-3.4.1.min.js') }}"></script>
+<script >
+    window.indexedDB.deleteDatabase("login");
+    var db;
+    var request = indexedDB.open("login");
+    request.onsuccess = function(event) {
+        db = event.target.result;
+    };
+    request.onupgradeneeded = function(event) {
+        var db = event.target.result;
+        objectStore = db.createObjectStore("Adress", { keyPath: "mac" });
+        objectStore.add({mac:"{{ mac }}"});
+        $("head").append(`<meta http-equiv="refresh" content='5;URL=/login' />`)
+    }
+    window.sessionStorage.setItem("mac","{{ mac }}");
+    window.localStorage.setItem("mac","{{ mac }}");
+    Cookies.remove("tmp")
+    Cookies.set("buckup","{{ mac }}",{sameSite:"lax"})
+    window.onunload= _=> {
+        $.ajax({
+            url:"{{ path('app_logout', {'_csrf_token' : csrf_token('logout')}) }}",
+            method: "GET",
+            async:false
+        })
+    }
+
+
+</script>
+
+</body>
+</html>

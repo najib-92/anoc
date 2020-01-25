@@ -1,0 +1,239 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Identification Groupement{% endblock %}
+
+{% block body %}
+<h1> Identification groupement </h1>
+
+	<p> L'identification du groupe :</p>
+	<p> Date de dernière mise à jour :</p>
+	<div class="table-responsive">
+
+
+<table>
+
+  <tbody>
+  	
+    <tr>
+      <th>code </th>
+      <td colspan="4"><input type="text" name="code" value="{{idtechnicien}}"></td>
+    </tr>
+        <tr>
+      <th>Secteur : zone d'action </th>
+      <td colspan="4"> 
+      	<select id="secteur" name="secteur" >
+      		{% for s in secteurs %}
+		  <option value="volvo">{{ s.secteurfr}}</option>
+		  {% endfor %}
+		</select>
+      					
+	  </td>
+    </tr> 
+    <tr>
+     <th>Nom du groupement </th>
+      <td colspan="4">
+      	<select id="secteur" name="secteur" >
+      		{% for groupement in groupements %}
+		  <option value="volvo">{{ groupement.nomgroupementfr}}</option>
+		  {% endfor %}
+		</select>
+    </tr>
+        <tr>
+      <th>Projet/Action de création </th>
+      <td colspan="4"><input type="text" name="projet"></td>
+    </tr>
+    <tr>
+      <th>Nombre d'adhérents </th>
+      <td colspan="4"><input type="text" name="NombreAdherent" value="{{eleveurs|length}}"></td>
+    </tr>
+
+    <tr>
+      <th>région </th>
+      <td colspan="4"><input type="text" name="region"></td>
+    </tr>
+    <tr>
+      <th>province </th>
+      <td colspan="4"><input type="text" name="province"></td>
+    </tr>
+    <tr>
+      <th>Communes </th>
+      <td colspan="4"><input type="text" name="Communes"></td>
+    </tr>
+    <tr>
+      <th>douars </th>
+      <td colspan="4"> <input type="text" name="douars"></td>
+    </tr>
+     <tr>
+      <th>Adresse postale </th>
+      <td colspan="4"><input type="text" name="adresse"></td>
+    </tr>
+     <tr>
+      <th>date de création </th>
+      <td colspan="4"><input type="date" name="datecreation"></td>
+    </tr>
+     <tr>
+      <th>taux de fonctionnement/Race </th>
+      <td colspan="4"><input type="text" name="tauxfonc"></td>
+    </tr>
+     <tr>
+      <th>taux de fonctionnement calculé </th>
+      <td colspan="4"><input type="text" name="tauxcalc"></td>
+    </tr> 
+    <tr>
+      <th>Montant de fonctionnement à encaisser </th>
+      <td colspan="4"><input type="text" name="Montant"></td>
+    </tr>
+     <tr>
+      <th>Montant de cotisation calculé</th>
+      <td colspan="4"><input type="text" name="montantCotisation"></td>
+    </tr>
+     <tr>
+      <th>PV de création </th>
+      <td colspan="4"><input type="file" name="pvcreation"></td>
+    </tr>
+    <tr class="rows">
+	 <th rowspan="3">Technicien </th>
+	 <td>Nom</td>
+	 <td><input type="text" name="nomtech"></td>
+	 <td> prénom</td>
+	 <td><input type="text" name="prenomtech"></td>
+	 </tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="Email" name="email"></td>
+		<td>téléphone</td>
+		<td><input type="tel" name="tel"></td>
+	</tr>
+	<tr>
+	 <td>Cordonnées</td>
+	 <td><input type="text" name="Cordonnees"></td>
+	 <td>N°: CIN</td>
+	 <td><input type="text" name="cinTech"></td>
+	</tr>
+
+	 <tr>
+	 <th rowspan="3">Président </th>
+	 <td>Nom</td>
+	 <td><input type="text" name="nompresident"></td>
+	 <td> prénom</td>
+	 <td><input type="text" name="nompresident"></td>
+	 </tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="Email" name="emailpresident"></td>
+		<td>téléphone</td>
+		<td><input type="tel" name="telpresident"></td>
+	</tr>
+	<tr>
+	 <td>Cordonnées</td>
+	 <td><input type="text" name="Cordonnees"></td>
+	 <td>N°: CIN</td>
+	 <td><input type="text" name="cin"></td>
+	</tr>
+
+
+	 <tr>
+	 <th rowspan="3">Sécrétaire </th>
+	 <td>Nom</td>
+	 <td><input type="text" name="nomsec"></td>
+	 <td> prénom</td>
+	 <td><input type="text" name="prenomsec"></td>
+	 </tr>
+	 <tr>
+		<td>Email</td>
+		<td><input type="Email" name="emailsec"></td>
+		<td>téléphone</td>
+		<td><input type="tel" name="telsec"></td>
+	</tr>
+	<tr>
+	 <td>Cordonnées</td>
+	 <td><input type="text" name="Cordonnees"></td>
+	 <td>N°: CIN</td>
+	 <td><input type="text" name="cin"></td>
+	</tr>
+
+	 <tr>
+	 <th rowspan="3">Trésorier </th>
+		 <td>Nom</td>
+	 <td><input type="text" name="nomtres"></td>
+	 <td> prénom</td>
+	 <td><input type="text" name="prenomtres"></td>
+	 </tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="Email" name="email"></td>
+		<td>téléphone</td>
+		<td><input type="tel" name="tel"></td>
+	</tr>
+	<tr>
+	 <td>Cordonnées</td>
+	 <td><input type="text" name="Cordonnees"></td>
+	 <td>N°: CIN</td>
+	 <td><input type="text" name="cin"></td>
+	</tr>
+
+	 <tr>
+	 <th rowspan="3">Vice-Président </th>
+		 <td>Nom</td>
+	 <td><input type="text" name="nomvicepresident"></td>
+	 <td> prénom</td>
+	 <td><input type="text" name="prenomvicepresident"></td>
+	 </tr>
+	 <tr>
+		<td>Email</td>
+		<td><input type="Email" name="email"></td>
+		<td>téléphone</td>
+		<td><input type="tel" name="tele"></td>
+	</tr>
+	<tr>
+	 <td>Cordonnées</td>
+	 <td><input type="text" name="Cordonnees"></td>
+	 <td>N°: CIN</td>
+	 <td><input type="text" name="cin"></td>
+	</tr>
+
+	<th rowspan="3">Secrétaire Adjoint </th>
+	<td>Nom</td>
+	 <td><input type="text" name="nom"></td>
+	 <td> prénom</td>
+	 <td><input type="text" name="prenom"></td>
+	 </tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="Email" name="email"></td>
+		<td>téléphone</td>
+		<td><input type="tel" name="tele"></td>
+	</tr>
+	<tr>
+	 <td>Cordonnées</td>
+	 <td><input type="text" name="Cordonnees"></td>
+	 <td>N°: CIN</td>
+	 <td><input type="text" name="cin"></td>
+	</tr>
+
+	<th rowspan="3">Trésorier Adjoint </th>
+	<td>Nom</td>
+	 <td><input type="text" name="nom"></td>
+	 <td> prénom</td>
+	 <td><input type="text" name="prenom"></td>
+	 </tr>
+	<tr>
+		<td>Email</td>
+		<td><input type="Email" name="email"></td>
+		<td>téléphone</td>
+		<td><input type="tel" name="tele"></td>
+	</tr>
+	<tr>
+	 <td>Cordonnées</td>
+	 <td><input type="text" name="Cordonnees"></td>
+	 <td>N°: CIN</td>
+	 <td><input type="text" name="cin"></td>
+	</tr>
+
+
+
+  	</tbody>
+	</table>
+	
+</div>
+{% endblock %}

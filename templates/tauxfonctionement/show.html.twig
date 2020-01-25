@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tauxfonctionement{% endblock %}
+
+{% block body %}
+    <h1>Tauxfonctionement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Tauxfonctionementid</th>
+                <td>{{ tauxfonctionement.tauxfonctionementid }}</td>
+            </tr>
+            <tr>
+                <th>Idrace</th>
+                <td>{{ tauxfonctionement.idrace }}</td>
+            </tr>
+            <tr>
+                <th>Racefr</th>
+                <td>{{ tauxfonctionement.racefr }}</td>
+            </tr>
+            <tr>
+                <th>Especefr</th>
+                <td>{{ tauxfonctionement.especefr }}</td>
+            </tr>
+            <tr>
+                <th>Racear</th>
+                <td>{{ tauxfonctionement.racear }}</td>
+            </tr>
+            <tr>
+                <th>Especear</th>
+                <td>{{ tauxfonctionement.especear }}</td>
+            </tr>
+            <tr>
+                <th>Tauxfonctionnement</th>
+                <td>{{ tauxfonctionement.tauxfonctionnement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tauxfonctionement_index') }}">back to list</a>
+
+    <a href="{{ path('tauxfonctionement_edit', {'tauxfonctionementid': tauxfonctionement.tauxfonctionementid}) }}">edit</a>
+
+    {{ include('tauxfonctionement/_delete_form.html.twig') }}
+{% endblock %}

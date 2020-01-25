@@ -1,0 +1,29 @@
+{{ form_start(form, {'attr': {'id': 'newform', 'nam': nam } }) }}
+    {{ form_widget(form) }}
+    <button type="button" class="{{ classBtnAddEdit|default('btn btnAED btn-success waves-effect waves-light m-1') }} " id="btnAddEdit"><i class="fa fa-check-square-o"></i> Enregistrer</button>
+{{ form_end(form) }}
+<script>
+    var $secteur = $('#races_secteurid');
+    // When sport gets selected ...
+    $secteur.change(function() {
+        // ... retrieve the corresponding form.
+        var $form = $(this).closest('form');
+        // Simulate form data, but only include the selected sport value.
+        var data = {};
+        data[$secteur.attr('name')] = $secteur.val();
+        // Submit data via AJAX to the form's action path.
+        $.ajax({
+            url : $form.attr('nam'),
+            type: $form.attr('method'),
+            data : data,
+            success: function(html) {
+                // Replace current position field ...
+                $('#races_groupementid').replaceWith(
+                    // ... with the returned one from the AJAX response.
+                    $(html).find('#races_groupementid')
+                );
+                // Position field now displays the appropriate positions.
+            }
+        });
+    });
+</script>

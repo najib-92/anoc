@@ -1,0 +1,38 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    encoders:
+        App\Entity\User:
+            algorithm: auto
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            access_denied_handler: App\Security\AccessDeniedHandler
+            anonymous : true
+            provider: app_user_provider
+            guard:
+                authenticators:
+                    - App\Security\AnocAuthenticationAuthenticator
+            logout:
+                path: app_logout
+                target: app_login
+                csrf_token_generator: security.csrf.token_manager
+                handlers: [logout_listener]
+
+    access_control:
+      - { path: '^/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: '^/checkin',allow_if: ' not has_role("ROLE_REGISTRED") and is_fully_authenticated()' }
+      - { path: '^/communes', allow_if: 'has_role("ROLE_REGISTRED") and has_role("ROLE_CADRE_GRPT")'}
+      - { path: '^/eleveurs', allow_if: 'has_role("ROLE_REGISTRED") and has_role("ROLE_CADRE_GRPT") or has_role("ROLE_REGISTRED") and has_role("ROLE_TECHNICIEN")'}
+      #- { path: '^/datatable', roles: [ ROLE_REGISTRED, ROLE_ADMIN ] }
+
+      #- { path: '^/communes/3', allow_if: 'has_role("ROLE_REGISTRED") and has_role("ROLE_ADMIN") and has_role("ROLE_ADMIN2")'}     
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }

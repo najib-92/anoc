@@ -1,0 +1,5 @@
+<form id="deleteForm" method="post" action="{{ douar.douarid}}/delete" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ douar.douarid) }}">
+    <button type="button" id="btnDelete" class="btn btnAED btn-danger"><i class="fa fa-check-square-o"></i> Supprimer</button>
+</form>

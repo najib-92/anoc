@@ -1,0 +1,8 @@
+@media  screen and (max-width: 991px) {
+  body {
+    background-color: red!important;
+  }
+  .navbar-nav{
+    padding-left: 130px!important;
+  }
+}

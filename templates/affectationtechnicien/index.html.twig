@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affectation technicien{% endblock %}
+{% block stylesheets %}
+  <link href="{{ asset('assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
+        type="text/css">
+  <link href="{{ asset('assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css') }}" rel="stylesheet"
+        type="text/css">
+{% endblock %}
+{% block body %}
+  <h2>Affectation technicien</h2>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header"><i class="fa fa-table"></i> Affectation technicien</div>
+        <div class="alerts"></div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table  id="datatable" class="table table-bordered dataTable">
+              <thead>
+                <th data-class-name="hideID">ID</th>
+                <th>Nom de groupement</th>
+                <th>Nom de technicien</th>
+                <th>Date debut d'affectation</th>
+                <th>Date fin d'affectation</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% block javascripts %}{% endblock %}
+{% endblock %}

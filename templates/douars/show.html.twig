@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Douars{% endblock %}
+
+{% block body %}
+    <h1>Douars</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Douarid</th>
+                <td>{{ douar.douarid }}</td>
+            </tr>
+            <tr>
+                <th>Douarfr</th>
+                <td>{{ douar.douarfr }}</td>
+            </tr>
+            <tr>
+                <th>Douarar</th>
+                <td>{{ douar.douarar }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('douars_index') }}">back to list</a>
+
+    <a href="{{ path('douars_edit', {'douarid': douar.douarid}) }}">edit</a>
+
+    {{ include('douars/_delete_form.html.twig') }}
+{% endblock %}

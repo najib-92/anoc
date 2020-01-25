@@ -1,0 +1,4 @@
+{{ form_start(form, {'attr':{'id':'newform', 'nam': nam, novalidate: 'novalidate'}}) }}
+    {{ form_widget(form) }}
+    <button type="button" class="{{ classBtnAddEdit|default('btn btnAED btn-success waves-effect waves-light m-1') }} " id="btnAddEdit"><i class="fa fa-check-square-o"></i> Enregistrer</button>
+{{ form_end(form) }}

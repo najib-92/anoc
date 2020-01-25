@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Groupements{% endblock %}
+
+{% block body %}
+    <h1>Edit Groupements</h1>
+
+    {{ include('groupements/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('groupements_index') }}">back to list</a>
+
+    {{ include('groupements/_delete_form.html.twig') }}
+{% endblock %}

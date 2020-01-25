@@ -1,0 +1,35 @@
+h2{
+
+  margin-bottom: 12px;
+  margin-top: 5px;
+}
+.btn_Ajt{
+  margin-bottom: 5px;
+}
+label,.btn{
+  text-transform: unset!important;
+}
+label{
+  margin-top: 10px!important;
+}
+/*pour text arabe en droit dans le model */
+.text_Arb{
+	float: right;
+	/*padding-right: 1%;
+	padding-left: 0%;*/
+	text-align: right;
+}
+/*pour input arabe en droit dans le model */
+.input_Arb{
+	direction: rtl;
+}
+/* mettre le button pour ajouter en right*/
+.btn{
+  float: right;
+  margin-right: 0px!important;
+  margin-top: 12px!important;
+}
+/*Regler le column Action (button Modifier and supprimer)*/
+tbody>tr> td:last-child{
+  width: 210px!important;
+}

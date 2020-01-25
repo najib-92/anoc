@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eleveurs{% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
+  type="text/css">
+<link href="{{ asset('assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css') }}" rel="stylesheet"
+  type="text/css">
+{% endblock %}
+{% block body %}
+<h2>Eleveurs</h2>
+
+<div class="row btn_Ajt">
+  <div class="col-12 col-lg-4 col-xl-2">
+    <!--Success  Modal -->
+    {% if  is_granted("ROLE_CADRE_GRPT") %}
+    <button id="btnModalAdd" class="btn btn-success btn-block m-1" data-toggle="modal"
+      data-target="#successmodal">Ajouter</button>
+    {% endif %}
+    <div class="modal fade" id="successmodal" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content border-success">
+          <div class="modal-header bg-success">
+            <h5 class="modal-title text-white" data-titleAdd="Ajouter un nouveaux éleveur" data-titleEdit="Modifier un éleveur">Ajouter un nouveaux éleveur</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-inverse-success" data-dismiss="modal"><i class="fa fa-times"></i>
+              Annuler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Modal -->
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="typeEleveur">
+          <div class="titleTypeEleveur"><i class="fa fa-table"></i> Eleveur</div>
+          <div class="choiseTypeEleveur">
+            <select class="form-control typeeleveur" id="typeeleveur" name="typeeleveur" >
+              <option value="Selectionneur Multiplicateur">Selectionneur et Multiplicateur</option>
+              <option value="Selectionneur">Selectionneur</option>
+              <option value="Multiplicateur">Multiplicateur</option>
+            </select>
+          </div>
+          {% if is_granted("ROLE_TECHNICIEN") %}
+          <div class="titleTypeEleveur choiseTypeEleveur"><i class="fa fa-table"></i> Groupements</div>
+          <div class="choiseTypeEleveur">
+            <select class="form-control typeeleveur" id="typegroupements" name="typegroupements" >
+              {% for groupement in groupements %}
+              <option value="{{ groupement.groupementid}}">{{ groupement.nomgroupementfr}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="alerts"></div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <div class="divBtnEditDelete">
+            <button class="btn btn-warning btn-sm btn-round waves-effect waves-light ml-1 mr-1 btnModalEdit" data-toggle="modal" data-target="#successmodal">Modifier</button>
+            {% if  is_granted("ROLE_CADRE_GRPT") %}
+              <button type="button" class="btn btn-danger btn-sm btn-round waves-effect waves-light ml-1 mr-1 btnModalDelete" data-toggle="modal" data-target="#successmodal">Supprimer</button>
+            {% endif %}
+          </div>
+          <table  id="datatable" class="table table-bordered dataTable">
+            <thead>
+              <th data-class-name="hideID">ID</th>
+              <th>Nom de secteur</th>
+              {% if is_granted("ROLE_TECHNICIEN") %}
+                <th data-class-name="hideID">Nom de groupement</th>
+              {% else %}
+                <th>Nom de groupement</th>
+              {% endif %}
+              <th>Nom de ville</th>
+              <th>Nom de douar</th>
+              <th>Code eleveur</th>
+              <th>CIN</th>
+              <th>Validite CIN</th>
+              <th>Date de CIN</th>
+              <th>Nom en français</th>
+              <th data-class-name="text_Arb_Datatable">الإسم العائلي</th>
+              <th>Prenom en français</th>
+              <th data-class-name="text_Arb_Datatable">الإسم الشخصي</th>
+              <th>Date adhesion</th>
+              <th>Adresse en français</th>
+              <th data-class-name="text_Arb_Datatable">العنوان</th>
+              <th>Effectif ovin</th>
+              <th>Effectif caprin</th>
+              <th>Type eleveur</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% block javascripts %}<script src="{{ asset('assets/js/eleveursJQ.js') }}"></script>{% endblock %}
+{% endblock %}

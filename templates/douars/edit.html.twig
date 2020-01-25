@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Douars{% endblock %}
+
+{% block body %}
+    <h1>Edit Douars</h1>
+
+    {{ include('douars/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('douars_index') }}">back to list</a>
+
+    {{ include('douars/_delete_form.html.twig') }}
+{% endblock %}

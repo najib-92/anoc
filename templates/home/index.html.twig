@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home!{% endblock %}
+
+{% block body %}
+    <video  style="z-index: -1; position: absolute;width: -webkit-fill-available;left: auto;right: 0px;top: 0px;     filter: blur(8px);" class="my-background-video jquery-background-video" loop autoplay muted playsinline >
+        <source src="{{ asset('assets/file.mp4') }}" type="video/mp4">
+    </video>
+
+<div style="text-align: center;     margin-top: 10%;">
+    <img src="{{ asset('assets/Logo.png') }}" alt="" srcset="">
+    <h1>ANOC</h1>
+</div>
+
+{% endblock %}

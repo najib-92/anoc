@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Douars{% endblock %}
+
+{% block body %}
+    <h1>Create new Douars</h1>
+
+    {{ include('douars/_form.html.twig') }}
+
+    <a href="{{ path('douars_index') }}">back to list</a>
+{% endblock %}

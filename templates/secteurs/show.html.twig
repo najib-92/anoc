@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Secteurs{% endblock %}
+
+{% block body %}
+    <h1>Secteurs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Secteurid</th>
+                <td>{{ secteur.secteurid }}</td>
+            </tr>
+            <tr>
+                <th>Secteur</th>
+                <td>{{ secteur.secteur }}</td>
+            </tr>
+            <tr>
+                <th>Secteurar</th>
+                <td>{{ secteur.secteurar }}</td>
+            </tr>
+            <tr>
+                <th>Codesecteur</th>
+                <td>{{ secteur.codesecteur }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('secteurs_index') }}">back to list</a>
+
+    <a href="{{ path('secteurs_edit', {'secteurid': secteur.secteurid}) }}">edit</a>
+
+    {{ include('secteurs/_delete_form.html.twig') }}
+{% endblock %}

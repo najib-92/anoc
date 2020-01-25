@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Groupements{% endblock %}
+{% block stylesheets %}
+<link href="{{ asset('assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"
+  type="text/css">
+<link href="{{ asset('assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css') }}" rel="stylesheet"
+  type="text/css">
+{% endblock %}
+{% block body %}
+<h2>Groupements</h2>
+
+<div class="row btn_Ajt">
+  <div class="col-12 col-lg-4 col-xl-2">
+    <!--Success  Modal -->
+    <button id="btnModalAdd" class="btn btn-success btn-block m-1" data-toggle="modal"
+      data-target="#successmodal">Ajouter</button>
+    <div class="modal fade" id="successmodal" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content border-success">
+          <div class="modal-header bg-success">
+            <h5 class="modal-title text-white" data-titleAdd="Ajouter un nouveaux groupement" data-titleEdit="Modifier un groupement">Ajouter un nouveaux groupement</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-inverse-success" data-dismiss="modal"><i class="fa fa-times"></i>
+              Annuler</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Modal -->
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header"><i class="fa fa-table"></i> Groupement</div>
+      <div class="alerts"></div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <div class="divBtnEditDelete">
+            <button class="btn btn-warning btn-sm btn-round waves-effect waves-light ml-1 mr-1 btnModalEdit" data-toggle="modal" data-target="#successmodal">Modifier</button>
+            <button type="button" class="btn btn-danger btn-sm btn-round waves-effect waves-light ml-1 mr-1 btnModalDelete" data-toggle="modal" data-target="#successmodal">Supprimer</button>
+          </div>
+          <table id="datatable" class="table table-bordered dataTable">
+            <thead>
+              <th data-class-name="hideID">ID</th>
+              <th>Nom de secteur</th>
+              <th>Technicien</th>
+              <th>Code de groupement</th>
+              <th>Nom en français</th>
+              <th data-class-name="text_Arb_Datatable">إسم التجمع</th>
+              <th>Adresse postale</th>
+              <th>Date de creation</th>
+              <th>PV creation</th>
+              <th>type Taux Fonctionnement</th>
+              <th>Droit fonctionement</th>
+              <th>Autre cotisations</th>
+              <th>Effectif ovin encadre</th>
+              <th>Effectif caprin encadre</th>
+              <th>Lieu PV creation</th>
+              <th>LDate PV creation</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% block javascripts %}<script src="{{ asset('assets/js/groupementsJQ.js') }}"></script>{% endblock %}
+{% endblock %}

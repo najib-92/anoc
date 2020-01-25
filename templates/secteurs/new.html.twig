@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Secteurs{% endblock %}
+
+{% block body %}
+    <h1>Create new Secteurs</h1>
+
+    {{ include('secteurs/_form.html.twig') }}
+
+    <a href="{{ path('secteurs_index') }}">back to list</a>
+{% endblock %}

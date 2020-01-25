@@ -1,0 +1,94 @@
+{{ form_start(form, {'attr':{'id':'newform','nam': nam, 'data-parsley-required-message':"Choisissez votre sexe !!!" }}) }}
+
+    
+    {{ form_row(form.matricule) }}
+    
+    
+    {{ form_row(form.numcin) }}
+    
+    
+    {{ form_row(form.datecin) }}
+    
+    
+    {{ form_row(form.validitecin) }}
+    
+    
+    {{ form_row(form.nomfr) }}
+    
+    
+    {{ form_row(form.nomar) }}
+    
+    
+    {{ form_row(form.prenomfr) }}
+    
+    
+    {{ form_row(form.prenomar) }}
+    
+    
+    {{ form_row(form.adressefr) }}
+    
+    
+    {{ form_row(form.adressear) }}
+    
+    
+    {{ form_row(form.sexe) }}
+                 
+    
+    {{ form_row(form.datenaissance) }}
+    
+    
+    {{ form_row(form.lieunaissance) }}
+    
+    
+    {{ form_row(form.numcnss) }}
+    
+    
+    {{ form_row(form.numcimr) }}
+    
+    
+    {{ form_row(form.telpersonnel) }}
+    
+    
+    {{ form_row(form.telprofessionnel) }}
+    
+    
+    {{ form_row(form.emailpersonnel) }}
+    
+    
+    {{ form_row(form.emailprofessionnel) }}
+    
+    
+    {{ form_row(form.typecontrat) }}
+    
+    
+    {{ form_row(form.fonction) }}
+    
+    
+    {{ form_row(form.affectation) }}
+    
+    
+    {{ form_row(form.dateentree) }}
+    
+    
+    {{ form_row(form.situationfamiliale) }}
+    
+    
+    {{ form_row(form.salaire) }}
+    
+    
+    {{ form_row(form.banque) }}
+    
+    
+    {{ form_row(form.numrib) }}
+    
+    
+    {{ form_row(form.diplomes) }}
+    
+    
+    {{ form_row(form.dateobtdiplome) }}
+    
+    
+    {{ form_row(form.specialite) }}
+    
+    <button type="button" class="{{ classBtnAddEdit|default('btn btnAED btn-success waves-effect waves-light m-1') }} "  id="btnAddEdit"><i class="fa fa-check-square-o"></i> Enregistrer</button>
+{{ form_end(form) }}
